@@ -13,6 +13,35 @@ $max-width-small: 90%;
 
 $transition: all 0.3s ease;
 
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		@media only screen and (max-width: 37.5em) {
+			@content;
+		} //600px
+	}
+
+	@if $breakpoint == tab-port {
+		@media only screen and (max-width: 56.25em) {
+			@content;
+		} //900px
+	}
+}
+
 /* Reset */
 *,
 *::before,
@@ -30,9 +59,6 @@ html {
 // Main Style
 body {
 	font-family: 'Red Hat Display', sans-serif;
-	font-size: 1.8rem;
-	font-weight: 500;
-	line-height: 2.6rem;
 	color: $color-tertiary-light;
 }
 
@@ -40,6 +66,17 @@ a {
 	text-decoration: none;
 }
 
-img {
-	width: 100%;
+// Utility Classes
+.pargraph {
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 2.6rem;
+
+	@include respond(tab-port) {
+		font-size: 1.6rem;
+	}
+}
+
+.u-margin-bottom-l {
+	margin-bottom: 3.3rem;
 }

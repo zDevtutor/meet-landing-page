@@ -1,3 +1,17 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 /* Reset */
 *,
 *::before,
@@ -12,13 +26,131 @@ html {
 
 body {
   font-family: 'Red Hat Display', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 2.6rem;
   color: #87879d; }
 
 a {
   text-decoration: none; }
 
-img {
-  width: 100%; }
+.pargraph {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem; }
+  @media only screen and (max-width: 56.25em) {
+    .pargraph {
+      font-size: 1.6rem; } }
+
+.u-margin-bottom-l {
+  margin-bottom: 3.3rem; }
+
+.heading-primary {
+  font-weight: 900;
+  font-size: 6.4rem;
+  line-height: 6.4rem;
+  color: #28283d; }
+  @media only screen and (max-width: 56.25em) {
+    .heading-primary {
+      font-size: 4.8rem;
+      line-height: 4.8rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary {
+      font-size: 4rem;
+      line-height: 4.4rem; } }
+
+.btn {
+  padding: 1.6rem 2.9rem;
+  color: #fafafa;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 2.6rem;
+  display: inline-block; }
+  .btn__span--primary {
+    color: #8fe3f9; }
+  .btn__span--secondary {
+    color: #d9b8ff; }
+  .btn--primary, .btn--secondary {
+    transition: all 0.3s ease; }
+  .btn--primary {
+    background-color: #4d96a9; }
+    .btn--primary:hover {
+      background-color: #71c0d4; }
+  .btn--secondary {
+    background-color: #855fb1; }
+    .btn--secondary:hover {
+      background-color: #b18bdd; }
+
+.logo {
+  width: 11.9rem;
+  height: 2.8rem;
+  margin: 8rem auto; }
+  @media only screen and (max-width: 56.25em) {
+    .logo {
+      margin: 6rem auto; } }
+  @media only screen and (max-width: 37.5em) {
+    .logo {
+      margin: 5rem auto; } }
+
+.showcase {
+  display: flex;
+  overflow-x: hidden;
+  justify-content: space-between; }
+  @media only screen and (max-width: 56.25em) {
+    .showcase {
+      flex-direction: column;
+      height: 100rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .showcase {
+      flex-direction: column;
+      height: 70rem; } }
+  .showcase__content {
+    flex-basis: 40%; }
+    @media only screen and (max-width: 37.5em) {
+      .showcase__content {
+        max-width: 90%;
+        margin: auto; } }
+  .showcase::before {
+    content: '';
+    background: url(../images/image-hero-left.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-basis: 30%;
+    margin-left: -3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .showcase::before {
+        content: '';
+        background: url(../images/image-hero-responsive.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        flex-basis: 100%;
+        margin: 0; } }
+  .showcase::after {
+    content: '';
+    background: url(../images/image-hero-right.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-basis: 30%;
+    margin-right: -3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .showcase::after {
+        content: '';
+        background: none;
+        flex-basis: 100%;
+        margin: 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .showcase__buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }
+  .showcase__buttons > *:not(:last-child) {
+    margin-right: 1.6rem; }
+    @media only screen and (max-width: 37.5em) {
+      .showcase__buttons > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 1.6rem; } }
+
+.header {
+  margin: auto;
+  text-align: center; }

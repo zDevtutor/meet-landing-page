@@ -1,0 +1,149 @@
+.heading-primary {
+	font-weight: 900;
+	font-size: 6.4rem;
+	line-height: 6.4rem;
+	color: $color-tertiary-dark;
+
+	@include respond(tab-port) {
+		font-size: 4.8rem;
+		line-height: 4.8rem;
+	}
+
+	@include respond(phone) {
+		font-size: 4rem;
+		line-height: 4.4rem;
+	}
+}
+
+.btn {
+	padding: 1.6rem 2.9rem;
+	color: $color-white;
+	border-radius: 10rem;
+	font-size: 1.6rem;
+	font-weight: 900;
+	line-height: 2.6rem;
+	display: inline-block;
+
+	&__span--primary {
+		color: $color-primary-light;
+	}
+
+	&__span--secondary {
+		color: $color-secondary-light;
+	}
+
+	&--primary,
+	&--secondary {
+		transition: $transition;
+	}
+
+	&--primary {
+		background-color: $color-primary-dark;
+
+		&:hover {
+			background-color: rgba(113, 192, 212, 1);
+		}
+	}
+
+	&--secondary {
+		background-color: $color-secondary-dark;
+
+		&:hover {
+			background-color: #b18bdd;
+		}
+	}
+}
+
+.logo {
+	width: 11.9rem;
+	height: 2.8rem;
+	margin: 8rem auto;
+
+	@include respond(tab-port) {
+		margin: 6rem auto;
+	}
+
+	@include respond(phone) {
+		margin: 5rem auto;
+	}
+}
+
+// SHOWCASE SECTION
+.showcase {
+	display: flex;
+	overflow-x: hidden;
+	justify-content: space-between;
+
+	@include respond(tab-port) {
+		flex-direction: column;
+		height: 100rem;
+	}
+
+	@include respond(phone) {
+		flex-direction: column;
+		height: 70rem;
+	}
+
+	&__content {
+		flex-basis: 40%;
+
+		@include respond(phone) {
+			max-width: $max-width-small;
+			margin: auto;
+		}
+	}
+
+	&::before {
+		content: '';
+		background: url(../images/image-hero-left.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		flex-basis: 30%;
+		margin-left: -3rem;
+
+		@include respond(tab-port) {
+			content: '';
+			background: url(../images/image-hero-responsive.png);
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			flex-basis: 100%;
+			margin: 0;
+		}
+	}
+
+	&::after {
+		content: '';
+		background: url(../images/image-hero-right.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		flex-basis: 30%;
+		margin-right: -3rem;
+
+		@include respond(tab-port) {
+			content: '';
+			background: none;
+			flex-basis: 100%;
+			margin: 0;
+		}
+	}
+
+	&__buttons {
+		@include respond(phone) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__buttons > *:not(:last-child) {
+		margin-right: 1.6rem;
+
+		@include respond(phone) {
+			margin-right: 0;
+			margin-bottom: 1.6rem;
+		}
+	}
+}
