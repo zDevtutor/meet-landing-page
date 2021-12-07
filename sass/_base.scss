@@ -1,0 +1,45 @@
+// Colors
+$color-primary-dark: #4d96a9;
+$color-primary-light: #8fe3f9;
+$color-secondary-dark: #855fb1;
+$color-secondary-light: #d9b8ff;
+$color-tertiary-dark: #28283d;
+$color-tertiary-light: #87879d;
+$color-white: #fafafa;
+
+// Container
+$max-width-large: 80%;
+$max-width-small: 90%;
+
+$transition: all 0.3s ease;
+
+/* Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+// Main Style
+body {
+	font-family: 'Red Hat Display', sans-serif;
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 2.6rem;
+	color: $color-tertiary-light;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+}

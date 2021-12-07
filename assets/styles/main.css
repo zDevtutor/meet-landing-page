@@ -1,0 +1,24 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  color: #87879d; }
+
+a {
+  text-decoration: none; }
+
+img {
+  width: 100%; }
