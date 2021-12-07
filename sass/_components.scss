@@ -15,6 +15,26 @@
 	}
 }
 
+.heading-secondary {
+	font-weight: 900;
+	font-size: 4rem;
+	line-height: 4.4rem;
+	color: $color-tertiary-dark;
+
+	&--white {
+		color: $color-white;
+	}
+}
+
+.heading-tertiary {
+	font-weight: 900;
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	letter-spacing: 0.4rem;
+	color: $color-primary-dark;
+	text-transform: uppercase;
+}
+
 .btn {
 	padding: 1.6rem 2.9rem;
 	color: $color-white;
@@ -54,17 +74,52 @@
 	}
 }
 
+.number-seperator {
+	width: 5.6rem;
+	height: 5.6rem;
+	margin: auto;
+	margin-top: 15rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	font-size: 1.6rem;
+	font-weight: bold;
+	background-color: $color-white;
+	border: 1px solid $color-tertiary-light;
+	border-radius: 50%;
+
+	&::before {
+		content: '';
+		width: 0.1rem;
+		margin: 0 auto;
+		height: 8.1rem;
+		background-color: $color-tertiary-light;
+		position: absolute;
+		top: -8rem;
+	}
+
+	&--overlay {
+		background-color: $color-white;
+		position: relative;
+		top: 3rem;
+		z-index: 111;
+	}
+}
+
+// Main Style
+
 .logo {
 	width: 11.9rem;
 	height: 2.8rem;
 	margin: 8rem auto;
 
 	@include respond(tab-port) {
-		margin: 6rem auto;
+		margin-top: 6rem;
 	}
 
 	@include respond(phone) {
-		margin: 5rem auto;
+		margin-top: 5rem;
 	}
 }
 
@@ -76,20 +131,21 @@
 
 	@include respond(tab-port) {
 		flex-direction: column;
-		height: 100rem;
+		height: 60rem;
 	}
 
 	@include respond(phone) {
 		flex-direction: column;
-		height: 70rem;
+		height: 55rem;
 	}
 
 	&__content {
 		flex-basis: 40%;
 
-		@include respond(phone) {
+		@include respond(tab-port) {
 			max-width: $max-width-small;
 			margin: auto;
+			margin-top: 4rem;
 		}
 	}
 
@@ -106,10 +162,14 @@
 			content: '';
 			background: url(../images/image-hero-responsive.png);
 			background-position: center;
-			background-size: contain;
+			background-size: auto;
 			background-repeat: no-repeat;
 			flex-basis: 100%;
 			margin: 0;
+		}
+
+		@include respond(phone) {
+			background-size: cover;
 		}
 	}
 
@@ -125,7 +185,7 @@
 		@include respond(tab-port) {
 			content: '';
 			background: none;
-			flex-basis: 100%;
+			flex-basis: auto;
 			margin: 0;
 		}
 	}
@@ -145,5 +205,94 @@
 			margin-right: 0;
 			margin-bottom: 1.6rem;
 		}
+	}
+}
+
+// GALLARY SECTION
+.gallary {
+	max-width: $max-width-small;
+	margin: auto;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin-top: 6.4rem;
+	margin-bottom: 8rem;
+	column-gap: 1.1rem;
+
+	&__img {
+		width: 100%;
+		border-radius: 1.2rem;
+	}
+
+	@include respond(phone) {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2.5rem;
+		row-gap: 2.5rem;
+	}
+}
+
+// DETAILS SECTION
+.details {
+	max-width: 35%;
+	margin: auto;
+	text-align: center;
+
+	@include respond(phone) {
+		max-width: $max-width-small;
+	}
+}
+
+// FOOTER SECTION
+.footer {
+	position: relative;
+	background: url(../images/image-footer.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 11.6rem 0;
+	color: $color-white;
+	z-index: 1;
+
+	@include respond(phone) {
+		padding: 7rem 0;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(77, 150, 168, 0.6);
+		z-index: -1;
+	}
+
+	&__content {
+		max-width: $max-width-small;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		& > *:not(:last-child) {
+			@include respond(phone) {
+				margin-bottom: 4rem;
+			}
+		}
+
+		@include respond(phone) {
+			display: block;
+			text-align: center;
+		}
+
+		& > * {
+			flex: 0 0 33%;
+		}
+	}
+
+	&__button {
+		text-align: center;
+		flex: 0 0 20%;
 	}
 }
