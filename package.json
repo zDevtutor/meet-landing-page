@@ -1,0 +1,16 @@
+{
+	"name": "meet",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"watch:sass": "node-sass sass/main.scss assets/styles/main.css -w"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"node-sass": "^7.0.0"
+	}
+}
