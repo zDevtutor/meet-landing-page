@@ -1,0 +1,273 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  color: #87879d; }
+
+a {
+  text-decoration: none; }
+
+.paragraph {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.6rem; }
+  @media only screen and (max-width: 56.25em) {
+    .paragraph {
+      font-size: 1.6rem; } }
+
+.u-margin-bottom-l {
+  margin-bottom: 3.3rem; }
+
+.u-margin-bottom-s {
+  margin-bottom: 1.6rem; }
+
+.heading-primary {
+  font-weight: 900;
+  font-size: 6.4rem;
+  line-height: 6.4rem;
+  color: #28283d; }
+  @media only screen and (max-width: 56.25em) {
+    .heading-primary {
+      font-size: 4.8rem;
+      line-height: 4.8rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary {
+      font-size: 4rem;
+      line-height: 4.4rem; } }
+
+.heading-secondary {
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 4.4rem;
+  color: #28283d; }
+  .heading-secondary--white {
+    color: #fafafa; }
+
+.heading-tertiary {
+  font-weight: 900;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.4rem;
+  color: #4d96a9;
+  text-transform: uppercase; }
+
+.btn {
+  padding: 1.6rem 2.9rem;
+  color: #fafafa;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 2.6rem;
+  display: inline-block; }
+  .btn__span--primary {
+    color: #8fe3f9; }
+  .btn__span--secondary {
+    color: #d9b8ff; }
+  .btn--primary, .btn--secondary {
+    transition: all 0.3s ease; }
+  .btn--primary {
+    background-color: #4d96a9; }
+    .btn--primary:hover {
+      background-color: #71c0d4; }
+  .btn--secondary {
+    background-color: #855fb1; }
+    .btn--secondary:hover {
+      background-color: #b18bdd; }
+
+.number-seperator {
+  width: 5.6rem;
+  height: 5.6rem;
+  margin: auto;
+  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: #fafafa;
+  border: 1px solid #87879d;
+  border-radius: 50%; }
+  .number-seperator::before {
+    content: '';
+    width: 0.1rem;
+    margin: 0 auto;
+    height: 8.1rem;
+    background-color: #87879d;
+    position: absolute;
+    top: -8rem; }
+  .number-seperator--overlay {
+    background-color: #fafafa;
+    position: relative;
+    top: 3rem;
+    z-index: 111; }
+
+.logo {
+  width: 11.9rem;
+  height: 2.8rem;
+  margin: 8rem auto; }
+  @media only screen and (max-width: 56.25em) {
+    .logo {
+      margin-top: 6rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .logo {
+      margin-top: 5rem; } }
+
+.showcase {
+  display: flex;
+  overflow-x: hidden;
+  justify-content: space-between; }
+  @media only screen and (max-width: 56.25em) {
+    .showcase {
+      flex-direction: column;
+      height: 60rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .showcase {
+      flex-direction: column;
+      height: 55rem; } }
+  .showcase__content {
+    flex-basis: 40%; }
+    @media only screen and (max-width: 56.25em) {
+      .showcase__content {
+        max-width: 90%;
+        margin: auto;
+        margin-top: 4rem; } }
+  .showcase::before {
+    content: '';
+    background: url(../images/image-hero-left.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-basis: 30%;
+    margin-left: -3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .showcase::before {
+        content: '';
+        background: url(../images/image-hero-responsive.png);
+        background-position: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        flex-basis: 100%;
+        margin: 0; } }
+    @media only screen and (max-width: 37.5em) {
+      .showcase::before {
+        background-size: cover; } }
+  .showcase::after {
+    content: '';
+    background: url(../images/image-hero-right.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-basis: 30%;
+    margin-right: -3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .showcase::after {
+        content: '';
+        background: none;
+        flex-basis: auto;
+        margin: 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .showcase__buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }
+  .showcase__buttons > *:not(:last-child) {
+    margin-right: 1.6rem; }
+    @media only screen and (max-width: 37.5em) {
+      .showcase__buttons > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 1.6rem; } }
+
+.gallary {
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 6.4rem;
+  margin-bottom: 8rem;
+  column-gap: 1.1rem; }
+  .gallary__img {
+    width: 100%;
+    border-radius: 1.2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .gallary {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2.5rem;
+      row-gap: 2.5rem; } }
+
+.details {
+  max-width: 35%;
+  margin: auto;
+  text-align: center; }
+  @media only screen and (max-width: 37.5em) {
+    .details {
+      max-width: 90%; } }
+
+.footer {
+  position: relative;
+  background: url(../images/image-footer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 11.6rem 0;
+  color: #fafafa;
+  z-index: 1; }
+  @media only screen and (max-width: 37.5em) {
+    .footer {
+      padding: 7rem 0; } }
+  .footer::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(77, 150, 168, 0.6);
+    z-index: -1; }
+  .footer__content {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__content > *:not(:last-child) {
+        margin-bottom: 4rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .footer__content {
+        display: block;
+        text-align: center; } }
+    .footer__content > * {
+      flex: 0 0 33%; }
+  .footer__button {
+    text-align: center;
+    flex: 0 0 20%; }
+
+.header {
+  margin: auto;
+  text-align: center; }
