@@ -1,6 +1,6 @@
-# Frontend Mentor - Equalizer landing page solution
+# Frontend Mentor - Meet landing page solution
 
-This is a solution to the [Equalizer landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/equalizer-landing-page-7VJ4gp3DE). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Meet landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/meet-landing-page-rbTDS6OUR). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -24,12 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./designs/screenshot.png)
+![](./assets/designs/screenshot.png)
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/equalizerlandingpage-khGsVc_1p](https://www.frontendmentor.io/solutions/equalizerlandingpage-khGsVc_1p)
-- Live Site URL: [https://equalizer-landing-page-ten.vercel.app/](https://equalizer-landing-page-ten.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/meet-landing-page-solution-rOaWMXnhx](https://www.frontendmentor.io/solutions/meet-landing-page-solution-rOaWMXnhx)
+- Live Site URL: [https://meet-landing-page-mu.vercel.app/](https://meet-landing-page-mu.vercel.app/)
 
 ## My process
 
@@ -38,20 +38,24 @@ Users should be able to:
 - Semantic HTML5 markup
 - Sass
 - Flexbox
+- CSS grid
 - Media queries
 
 ### Testing
 
 - HTML
-  No errors were returned when passing through the official W3C validator HTML Validation
-  ![](./designs/html-validation.png)
+  No errors were returned when passing through the official W3C validator HTML Validation just one warning related to not using headings inside a section tag which is not necessary in the current case since there is no headings to be displayed over the gallary section.
+  ![](./assets/designs/html-validation.png)
 - CSS
   No errors were found when passing through the official (Jigsaw) validator CSS Validation
-  ![](./designs/css-validation.png)
+  ![](./assets/designs/css-validation.png)
 - Page speed
-  The webpage achieved a score of 99 for desktop and 94 for mobile
-  ![](./designs/page-speed-desktop.png)
-  ![](./designs/page-speed-mobile.png)
+  The webpage achieved a score of 99 for desktop and 90 for mobile
+  ![](./assets/designs/page-speed-desktop.png)
+  ![](./assets/designs/page-speed-mobile.png)
+- Website accessablity
+  The webpage has a high accessabliity score of 94
+  ![](./assets/designs/accessability-score.png)
 
 ### Deployment
 
